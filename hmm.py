@@ -10,7 +10,7 @@ transition_probability = {'Sunny':{'Sunny':0.8, 'Rain': 0.2}, 'Rain': {'Sunny': 
 emission_probability = {'Sunny':{'Happy': 0.8, 'Sad':0.2}, 'Rain': {'Happy': 0.4, 'Sad':0.6}}
 
 
-model = hmm.MultinomialHMM(n_components = 2)
+model = hmm.MultinomialHMM(n_components = len(states))
 model.startprob_ = np.array([2/3, 1/3])
 model.transmat_ = np.array([[0.8, 0.2],[0.4, 0.6]])
 model.emissionprob_ = np.array([[0.8, 0.2],[0.4, 0.6]])
